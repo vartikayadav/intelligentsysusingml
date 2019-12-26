@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% block content %}
+{% load staticfiles %}
+<style type="text/css">
+.form-group{
+	width:450px;
+	padding:20px;
+	margin:20px auto ;
+	background: white;
+	border-radius: 10px;
+	-webkit-border-radius:10px;
+	-moz-border-radius: 10px;
+  font-size:20px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+	-moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+	-webkit-box-shadow: 0px 0px 90px rgba(0, 0, 0, 0.13);
+}
+
+.form-group .form-text .text-muted{
+display:none;
+}
+.form-style-10 h1{
+
+  background:rgb(44, 62, 80);
+	padding: 20px 30px 15px 30px;
+	margin: -30px -30px 30px -30px;
+	border-radius: 10px 10px 0 0;
+	-webkit-border-radius: 10px 10px 0 0;
+	-moz-border-radius: 10px 10px 0 0;
+	color: #fff;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+	font: normal 30px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+
+	border: 1px solid #257C9E;
+}
+.form-style-10 h1 > span{
+	display: block;
+	margin-top: 2px;
+	font: 13px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+.form-style-10 label{
+	display: block;
+	font: 13px Arial, Helvetica, sans-serif;
+	color: #888;
+	margin-bottom: 15px;
+}
+
+</style>
+<div class="" style="background-color:white;border:1px solid white ";>
+  <div class="container" style="text-align:center;margin-bottom:10px;margin-top:10px;height:auto;background-color:white;" >
+
+  <h1 style="text-align:center;text-decoration:underline">SignUp</h1>
+  <form  method="POST" >
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  <input type="submit" class="btn btn-default" value="SignUp">
+
+  </form>
+
+  </div>
+
+</div>
+
+{% endblock %}

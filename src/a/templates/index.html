@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+  .alert .alert-success .text-center{
+  	background-color:green;
+  }
+
+
+  #box11{
+             height: 100vh;
+             width: 100%;
+             background-image: url("https://images.unsplash.com/photo-1564906158598-041131af6a04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
+             background-size: cover;
+             display: table;
+             background-attachment: fixed;
+             opacity:0.9;
+         }
+         #box2{
+             height: 100vh;
+             width: 100%;
+             background-image: url("https://wallpapercave.com/wp/wp2347565.jpg");
+             background-size: cover;
+             display: table;
+             background-attachment: fixed;
+             opacity:0.8;
+         }
+         #box3{
+             height: 100vh;
+             width: 100%;
+             background-image: url("https://previews.123rf.com/images/peshkova/peshkova1802/peshkova180201083/95656566-creative-colorful-digital-business-chart-wallpaper-investment-and-finance-concept-3d-rendering.jpg");
+             background-size: cover;
+             display: table;
+             background-attachment: fixed;
+             opacity:0.9;
+         }
+
+
+        p{
+             font-family: arial black;
+            font-size: 50px;
+            color:white;
+            margin: 0px;
+            margin-top:40px;
+            vertical-align: middle;
+            text-align: center;
+            display: table-row;
+            }
+
+</style>
+<div class="" style="margin-left:20px;margin-right:20px;">
+
+  <div id="box11">
+              <!-- <h1><a style="color:white;text-decoration:none;" href=""> </a></h1> -->
+
+  </div>
+          <div id="box2">
+              <h1 ></h1>
+              <p><a  href="{% url 'admin:index' %}" style="color:white;text-decoration:none;"> INSERT DATASETS INTO SYSTEM </a></p>
+  </div>
+           <div id="box3">
+             <h1></h1>
+              <p><a style="color:white;text-decoration:none;" href="{% url 'prd:prediction' %}">ANALYSE ROAD TRAFFIC</a></p>
+          </div>
+
+  <br><br>
+  <!-- <div class="mySlides " style="height:600px;">
+
+    <img height="100%" src="http://hdqwalls.com/wallpapers/avengers-infinity-war-2018-poster-4k-rq.jpg" style="width:100%">
+
+  </div>
+
+  <div class="mySlides" style="height:600px;">
+
+    <img height="100%" src="https://pixelz.cc/wp-content/uploads/2017/01/marvel-avengers-age-of-ultron-uhd-4k-wallpaper.jpg" style="width:100%">
+
+  </div>
+
+  <div class="mySlides" style="height:600px;">
+
+    <img  height="100%" src="https://atgbcentral.com/data/out/51/4349574-iron-man-h-d-wallpaper.jpg" style="width:100%">
+
+  </div> -->
+
+</div>
+<br>
+<br>
+<div id="about" style="margin-left:10%;margin-right:10%;text-align:center;font-size:40px;font-family:'Cinzel', serif;">
+<div >
+About
+</div>
+<div class="" style="border-bottom:3px solid rgb(86, 101, 115); height:4%;width:50%;margin-left:25%;"></div>
+<br>
+<div class="" style="font-size:26px;font-family:'EB Garamond', serif;">
+  Tired of waiting in traffic!! Use <b>TRAFFIC_PREDICTION</b> and get rid of it.
+ It aims at solving traffic problems. Based on ML it targets at helping you find the best route so that you can avoid traffic while reaching your destination.
+</div>
+<br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/USFdMIEhzZo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<br>
+<br><br>
+
+
+
+
+{% endblock %}

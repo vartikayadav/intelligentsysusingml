@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load bootstrap4 %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static "css/b1.css" %}">
+
+    <link rel="stylesheet" href="{% static "css/comics.css" %}">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
+    <link rel="icon" type="image/jpg" href="https://previews.123rf.com/images/maxborovkov/maxborovkov1007/maxborovkov100700260/7338369-illustration-of-3d-t-symbol-.jpg">
+
+    <title>TRAFFIC_PREDICTION</title>
+    <style media="screen">
+
+    .fa {
+padding: 20px;
+font-size: 30px;
+width: 50px;
+text-align: center;
+text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+
+color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+
+color: white;
+}
+.fa-pinterest{
+  color:white;
+}
+    </style>
+
+
+    <style >
+   #color{
+     background-color:#b71c1c;
+   }
+
+      @import url(http://weloveiconfonts.com/api/?family=entypo);
+      #wrapper{
+      margin-top: 30px;
+
+      }
+      .box1{
+
+        border-radius: 50px;
+        font-family: 'entypo', sans-serif;
+        border-radius: 100px;
+        color:rgb(208, 211, 212);
+        margin:20px;
+        font-size: 25px;
+        display: inline;
+        cursor:pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="luxbar" class="luxbar-fixed"  >
+    <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+    <div class="luxbar-menu luxbar-menu-right luxbar-menu-material-cyan">
+        <ul class="luxbar-navigation">
+
+            <li class="luxbar-header">
+                <a href="/" class="luxbar-brand" style="font-size:40px;">TRAFFIC_PREDICTION</a>
+                <label class="luxbar-hamburger luxbar-hamburger-doublespin"
+                id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+            </li>
+            <li class="luxbar-item" style="font-size:26px;"><a href="/#about">About</a></li>
+            <!-- <li class="luxbar-item" style="font-size:26px;"><a href="/#character">Characters</a></li> -->
+            <li class="luxbar-item" style="font-size:26px;"><a href="{% url 'prd:prediction' %}"> Analyse</a></li>
+            <li class="luxbar-item" style="font-size:26px;"><a href="{% url 'accounts:signup' %}">SignUp</a></li>
+
+            {% if user.is_authenticated %}
+                       <li class="luxbar-item" style="font-size:26px;"><a style="text-decoration:none;color:white;"  href="{% url 'accounts:logout' %}">LogOut</a></li>
+                       {% else %}
+                       <li class="luxbar-item" style="font-size:26px;"><a href="{% url 'accounts:login' %}">LogIn</a></li>
+           {%endif%}
+
+
+
+        </ul>
+    </div>
+</header>
+<br><br>
+<br>
+<br>
+<br>
+{% if messages %}
+
+    {% for msg in messages %}
+
+      </script>
+        <div class="alert alert-{{msg.level_tag}} text-center " style="margin-left:20%;margin-right:20%;" role="alert">
+        {{msg.message}}
+        </div>
+
+    {% endfor %}
+
+
+{% endif %}
+
+
+{% block content %}
+{% endblock %}
+<br>
+
+<footer style="font-size:20px;text-align: center;font-family:'Cinzel', serif;color:white;background-color:#0E6655 ;line-height:100px;">
+<span style="padding:-100px;color:white;"><span style="margin-top:-10px;">KEEP IN TOUCH<br>
+  <a href="https://www.facebook.com/TRFP-112150373595846/" class="fa fa-facebook"></a> &nbsp&nbsp
+  <a href="https://twitter.com/Vartika60998058/" class="fa fa-twitter"></a> &nbsp&nbsp
+  <a href="https://www.pinterest.com/marvelpedia20" class="fa fa-pinterest"></a> &nbsp&nbsp
+<br>
+</span>
+
+Contact no- 8840084648 ,8890989098
+</span> <br>
+
+
+
+</footer>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+  </body>
+</html>
